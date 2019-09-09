@@ -11,7 +11,7 @@ public class GeldVerdelen extends Applet {
     public void init() {
         a = 113;
         b = 4;
-        uitkomst = 113/4;
+        uitkomst = a/b;
 
     }
     public void paint(Graphics g) {
