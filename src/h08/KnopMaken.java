@@ -4,44 +4,52 @@ import java.applet.*;
 import java.awt.event.*;
 
 public class KnopMaken extends Applet {
-    TextField tekstvak,tekstvak2;
-    Button knop;
-    Button knop2;
+    TextField tekstvak;
+    Button okKnop;
+    Button resetKnop;
+    String bericht;
+
+
 
     public void init() {
-        // tekstvak
-        tekstvak = new TextField("", 30);
-       // knop
-        knop = new Button("Ok");
-        knop.addActionListener( new KnopListener() );
+        tekstvak = new TextField(20);
+
+        okKnop = new Button("OK");
+
+        resetKnop = new Button("RESET");
+
+        okKnop.addActionListener(new OkKnopListener());
+
+        resetKnop.addActionListener(new ResetKnopListener());
+
         add(tekstvak);
-        add(knop);
-        knop2 = new Button("Reset");
-        knop2.addActionListener(new ResetListener());
-        add(knop2);
+        add(okKnop);
+        add(resetKnop);
+
+        bericht = "type iets ";
+
     }
+
 
     public void paint(Graphics g) {
-        g.drawString("Type een hele lange tekst " +
-                "in het tekstvakje " +
-                "en klik op Ok", 50, 100 );
-    }
-
-    class KnopListener implements ActionListener	{
-
-        public void actionPerformed( ActionEvent e ) {
-            tekstvak.setText("Jammer, " +
-                    "maar nu staat er iets anders");
-            repaint();
+        g.drawString(bericht,50,60);
 
     }
-}
+    class OkKnopListener implements ActionListener{
 
-    class ResetListener implements ActionListener	{
 
-        public void actionPerformed( ActionEvent e ) {
+        public void actionPerformed(ActionEvent e) {
+           bericht = tekstvak.getText();
+           repaint();
+
+
+        }
+    }
+    class ResetKnopListener implements ActionListener{
+
+        public void actionPerformed(ActionEvent e) {
             tekstvak.setText(" ");
-            repaint();
+
         }
     }
 }
