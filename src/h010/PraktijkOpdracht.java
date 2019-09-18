@@ -9,12 +9,16 @@ public class PraktijkOpdracht extends Applet {
     TextField tv1;
     String s,tekst;
     int cijfer;
+    int x;
+    int y;
 
 
     public void init() {
         tv1 = new TextField(20);
         tv1.addActionListener(new CijfersListener());
         add(tv1);
+        x = 50;
+        y = 70;
 
     }
     public class CijfersListener implements ActionListener{
@@ -59,7 +63,8 @@ public class PraktijkOpdracht extends Applet {
 
 
             }
-            getGraphics().drawString(tekst,20,50);
+            getGraphics().drawString(tekst,x,y);
+            y += 20;
 
 
 
