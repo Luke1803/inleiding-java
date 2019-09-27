@@ -15,7 +15,7 @@ public class MaandenNummer extends Applet {
 
     public void init() {
         tekstvak = new TextField(20);
-        tekstvak.addActionListener(new TextListener());
+        tekstvak.addActionListener(new MaandListener());
         add(tekstvak);
         maandlabel = new Label();
         add(maandlabel);
@@ -27,7 +27,7 @@ public class MaandenNummer extends Applet {
         g.drawString("hier komt de maand " + maandNaam[inputValue - 1] + " /dagen " + maandDagen[inputValue - 1], 50 ,50);
     }
 
-    class TextListener implements ActionListener {
+    class MaandListener implements ActionListener {
 
 
         public void actionPerformed(ActionEvent e) {
