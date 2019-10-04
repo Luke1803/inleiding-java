@@ -42,6 +42,7 @@ public class Opdracht3 extends Applet {
         if (betonmuur) {
             beton(g, hoogte, breedte);
         }
+        g.drawString("gebruik hoogt = 50 en breedte = 100",50,80);
 
     }
     public class BetonListener implements ActionListener {
@@ -160,6 +161,7 @@ public class Opdracht3 extends Applet {
 
     }
             y += hoog;
+
 }
     }
 }
